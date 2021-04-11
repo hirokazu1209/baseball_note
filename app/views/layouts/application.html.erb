@@ -10,6 +10,41 @@
   </head>
 
   <body>
+    <%# ヘッダー %>
+    <header class="header">
+      <div class="container">
+        <div class="logo_header">
+          <%= link_to "logo", "#" ,class:"logo"%>
+        </div>
+      </div>
+    </header>
+    <div class="layout_page">
+      <%# サイドバー %>
+      <aside class="sidebar">
+        <%# サイドバー ログイン・新規登録ボタン %>
+        <div class="box">
+          <% if user_signed_in? %>
+            <ul class="area_register_sidebar">
+              <%= link_to current_user.name, "#" ,class:"btn_new" %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class:"btn_loginin" %>
+            </ul>
+          <% else%>
+            <ul class="area_register_sidebar">
+              <%= link_to "新規登録", new_user_registration_path ,class:"btn_new" %>
+              <%= link_to "ログイン", new_user_session_path ,class:"btn_loginin" %>                    
+            </ul>
+          <% end %>
+        </div>
+        <%# サイドバー 記録・検索・投稿ボタン %>
+        <div class="box">
+          <ul class="list_nav_sidebar">
+            <%= link_to "記録", new_record_path %>
+            <%= link_to "検索", "#" %>
+            <%= link_to "投稿", articles_path %>
+          </ul>
+        </div>
+      </aside>
+
     <%= yield %>
   </body>
 </html>
