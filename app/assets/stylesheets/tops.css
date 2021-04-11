@@ -1,0 +1,153 @@
+a {
+  color: black;
+  text-decoration: none;
+}
+
+
+.header {
+  background-color: aqua;
+  
+}
+
+.container{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo_header .logo {
+  display: block;
+  width: 80px;
+  height: 30px;
+  background-color: chartreuse;
+}
+
+
+.sidebar {
+  flex: 0 0 240px;
+}
+
+.sidebar .box {
+  padding: 30px 0;
+}
+
+.sidebar .box + .box {
+  border-top: 1px solid #ccc;
+}
+
+.area_register_sidebar a {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 0 0 90px;
+  position: relative;
+}
+
+.area_register_sidebar a:before {
+  content:"";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: cadetblue;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+}
+
+
+.list_nav_sidebar a {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 0 0 90px;
+  position: relative;
+}
+
+.list_nav_sidebar a:before {
+  content:"";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: cadetblue;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+}
+
+.main {
+  background-color: rgb(242, 248, 236);
+  flex: auto;
+  min-width: 10px;
+  padding: 24px;
+}
+
+.main .box {
+  padding: 30px 0;
+}
+
+/* 投函リスト */
+.list_post {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -8px;
+}
+
+.list_post > li {
+  padding: 8px;
+  /* background-color: #ccc; */
+  width: 25%;
+}
+
+/* サムネイル */
+.list_post .thumb {
+  width: 100%;
+  background-color: crimson;
+}
+
+.list_post .thumb:before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 75%;
+  background-color: crimson;
+}
+
+/* レイアウト */
+.list_post .layout {
+  display: flex;
+  margin-top: 10px 0 0;
+}
+
+/* アイキャッチ */
+.list_post .eye_catch {
+  flex: 0 0 40px;
+  margin: 0 10px 0 0;
+}
+
+.list_post .image {
+  width: 100%;
+  background-color: rgb(29, 29, 80);
+  border-radius: 50%;
+}
+
+.list_post .image:before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 100%;
+  background-color: #ccc;
+}
+
+/* テキスト */
+.list_post .text {
+  flex: auto;
+  min-width: 10px;
+}
+
+
+.layout_page{
+  display: flex;
+}

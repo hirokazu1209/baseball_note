@@ -1,24 +1,66 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| name     | string | null: false |
+| nickname | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
+| pitching | string | null: false |
+| batting  | string | null: false |
+| position | string | null: false |
+| profile  | string | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :articles
+- has_many :comments
+- has_many :records
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+## articles テーブル
 
-* How to run the test suite
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| post    | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
 
-* Deployment instructions
+- belongs_to :user
+- has_many :comments
+- has_many_attached :videos
+- has_many_attached :images
 
-* ...
+
+
+## comments テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| message | text       | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
+| article | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :article
+
+
+
+## records テーブル
+
+| Column        | Type   | Options     |
+| ------------- | ------ | ----------- |
+| practice_time | string | null: false |
+| ball          | string | null: false |
+| check         | text   |             |
+| content       | text   |             |
+
+### Association
+
+- belongs_to :user
