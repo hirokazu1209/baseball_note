@@ -1,11 +1,11 @@
 a {
-  color: black;
+  color: #F4F5F7;
   text-decoration: none;
 }
 
 
 .header {
-  background-color: aqua;
+  background-color: #29c4a0;
   
 }
 
@@ -20,27 +20,29 @@ a {
   display: block;
   width: 80px;
   height: 30px;
-  background-color: chartreuse;
+  background-color: #29c4a0;
 }
 
 
 .sidebar {
   flex: 0 0 240px;
+  background-color: #3ad6b2;
+  height: 100vh;
 }
 
 .sidebar .box {
-  padding: 30px 0;
+  padding: 50px 0;
 }
 
 .sidebar .box + .box {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #F4F5F7;
 }
 
 .area_register_sidebar a {
   display: flex;
   align-items: center;
   height: 50px;
-  padding: 0 0 0 90px;
+  padding: 0 0 0 60px;
   position: relative;
 }
 
@@ -49,10 +51,10 @@ a {
   display: block;
   width: 30px;
   height: 30px;
-  background-color: cadetblue;
+  background-color: #F4F5F7;
   position: absolute;
   top: 50%;
-  left: 30px;
+  left: 10px;
   transform: translateY(-50%);
 }
 
@@ -61,7 +63,7 @@ a {
   display: flex;
   align-items: center;
   height: 50px;
-  padding: 0 0 0 90px;
+  padding: 0 0 0 60px;
   position: relative;
 }
 
@@ -70,10 +72,10 @@ a {
   display: block;
   width: 30px;
   height: 30px;
-  background-color: cadetblue;
+  background-color: #F4F5F7;
   position: absolute;
   top: 50%;
-  left: 30px;
+  left: 10px;
   transform: translateY(-50%);
 }
 
@@ -150,4 +152,10 @@ a {
 
 .layout_page{
   display: flex;
+}
+
+
+/* 投稿機能 */
+.font {
+  color: cornflowerblue;
 }

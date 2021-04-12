@@ -1,0 +1,6 @@
+<%= form_with model: @article, local: true do |f|%>
+  <%= f.label :post, "投稿内容" %><br />
+  <%= f.text_field :post, id:"#" %><br />
+
+  <%= f.submit "更新する" %>
+<% end %>

@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'tops#index' 
   resources :records, only: [:index, :new, :create]
-  resources :articles, only: [:index, :new, :create]
+  resources :articles do
+    resources :comments, only: :create
+  end
+  resources :users, only: :show
 end

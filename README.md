@@ -33,7 +33,7 @@
 - belongs_to :user
 - has_many :comments
 - has_many_attached :videos
-- has_many_attached :images
+- has_one_attached :image
 
 
 
@@ -41,7 +41,7 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| message | text       | null: false, foreign_key: true |
+| comment | text       | null: false, foreign_key: true |
 | user    | references | null: false, foreign_key: true |
 | article | references | null: false, foreign_key: true |
 
