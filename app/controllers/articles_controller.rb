@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
-    @article = Article.all
+    @articles = Article.all
   end
 
   def new
@@ -10,6 +10,39 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    if @article.save
+      redirect_to articles_path
+    else
+      render :new
+    end
+  end
+
+  def show
+    @article = Article.find(params[:id])
+    @comment = Comment.new
+    @comments = @article.comments.includes(:user) 
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+    unless user_signed_in? && current_user.id == @article.user_id
+      redirect_to action: :index
+    end
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to article_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to article_path
   end
 
   private

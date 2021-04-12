@@ -1,0 +1,31 @@
+<div class="font">
+  <%= link_to @article.post, "#", class: :font %>
+
+  <% if user_signed_in? && current_user.id == @article.user_id %>
+
+  <%= link_to "編集する", edit_article_path(@article), class: :font %>
+  <%= link_to "削除する", article_path(@article), method: :delete, class: :font %>
+
+  <% end %>
+  <div class="prototype__comments">
+    <% if user_signed_in? %>
+      <%= form_with model:[@article, @comment], local: true do |f|%>
+        <div class="field">
+          <%= f.label :comment, "コメント" %><br />
+          <%= f.text_field :comment %>
+        </div>
+        <div class="actions">
+          <%= f.submit "コメントする"  %>
+        </div>
+      <% end %>
+    <% end %> 
+    <ul class="comments_lists">
+      <% @comments.each do |comment| %>
+        <li class="comments_list">
+            <%= comment.comment %>
+            <%= link_to comment.user.nickname, user_path(comment.user),class: :font %>
+        </li>
+      <% end %>   
+    </ul>
+  </div>
+</div>
