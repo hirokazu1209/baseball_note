@@ -1,0 +1,2 @@
+<p>練習時間</p>
+<%= column_chart Record.group_by_day(:created_at).sum(:practice_time) ,width: "300px", height: "200px", xtitle: "日付", ytitle: "練習時間" %>
