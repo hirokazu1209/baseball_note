@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/fontawesome.js" crossorigin="anonymous"></script>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
 
   <body>
@@ -14,10 +16,11 @@
     <header class="header">
       <div class="container">
         <div class="logo_header">
-          <%= link_to "logo", "#" ,class:"logo"%>
+          <%= link_to "logo", root_path ,class:"logo"%>
         </div>
       </div>
     </header>
+
     <div class="layout_page">
       <%# サイドバー %>
       <aside class="sidebar">
@@ -25,26 +28,46 @@
         <div class="box">
           <% if user_signed_in? %>
             <ul class="area_register_sidebar">
-              <%= link_to current_user.name, "#" ,class:"btn_new" %>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class:"btn_loginin" %>
+              <%= link_to current_user.nickname, '#' %>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fas fa-sign-out-alt"></i>ログアウト
+              <% end %>
             </ul>
           <% else%>
             <ul class="area_register_sidebar">
-              <%= link_to "新規登録", new_user_registration_path ,class:"btn_new" %>
-              <%= link_to "ログイン", new_user_session_path ,class:"btn_loginin" %>                    
+              <%= link_to new_user_registration_path ,method: :get do %>
+                <i class="fas fa-edit"></i> 新規登録
+              <% end %>
+              <%= link_to new_user_session_path ,method: :get do %>
+                <i class="fas fa-sign-in-alt"></i> ログイン
+              <% end %>
             </ul>
           <% end %>
         </div>
         <%# サイドバー 記録・検索・投稿ボタン %>
         <div class="box">
           <ul class="list_nav_sidebar">
-            <%= link_to "記録", new_record_path %>
-            <%= link_to "検索", "#" %>
-            <%= link_to "投稿", articles_path %>
+            <%= link_to new_record_path, method: :get do %>
+              <i class="fas fa-sticky-note"></i> 記録
+            <% end %>
+            <%= link_to articles_path, method: :get do %>
+              <i class="fas fa-compass"></i> 検索
+            <% end %>
+            <%= link_to articles_path, method: :get do %>
+              <i class="fas fa-newspaper"></i> 投稿
+            <% end %>
           </ul>
         </div>
       </aside>
-
     <%= yield %>
+    </div>
   </body>
 </html>
+
+<%# <i class="fas fa-sticky-note"></i> f249 記録用アイコン
+<i class="fas fa-compass"></i> f14e 検索用アイコン
+<i class="fas fa-user"></i> f007 ユーザーアイコン %>
+<%# <i class="fas fa-sign-in-alt"></i> f2f6 サインインアイコン %>
+<%# <i class="fas fa-newspaper"></i> 投稿 %>
+<%# <i class="fas fa-sign-out-alt"></i> f2f5 サインアウト %>
+<%# <i class="fas fa-edit"></i>新規登録 %>

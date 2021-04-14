@@ -1,0 +1,57 @@
+/* 新規登録画面・ログイン画面 */
+h2 {
+  color: #29c4a0;
+  text-align: center;
+}
+
+.account-page .account-page__inner {
+  width: 100vw;
+  padding: 60px;
+  background-color: #bdeccd;
+  border: 3px solid #29c4a0;
+}
+
+.field {
+  color: #29c4a0;
+}
+
+.account-page input[type=text] {
+  padding: 0 0 0 30px;
+  margin-bottom: 15px;
+  color: #29c4a0;
+  font-size: 20px;
+  width: 100%;
+  height: 40px;
+  border: none;
+}
+
+.account-page input[type=password] {
+  padding: 0 0 0 30px;
+  margin-bottom: 15px;
+  color: #29c4a0;
+  font-size: 20px;
+  width: 100%;
+  height: 40px;
+  border: none;
+}
+
+.account-page textarea {
+  padding: 0 0 0 30px;
+  margin-bottom: 15px;
+  color: #29c4a0;
+  font-size: 20px;
+  width: 100%;
+  height: 80px;
+  border: none;
+}
+
+.account-page input[type=submit] {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #29c4a0;
+  font-size: 20px;
+  width: 30%;
+  height: 40px;
+  border: none;
+  cursor:  pointer;
+}
