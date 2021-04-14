@@ -2,5 +2,8 @@
   <%= f.label :post, "投稿内容" %><br />
   <%= f.text_field :post, id:"#" %><br />
 
+  <%= f.label :image, "ファイルをアップロード" %><br />
+  <%= f.file_field :image, id:"#" %><br />
+
   <%= f.submit "投稿する" %>
 <% end %>

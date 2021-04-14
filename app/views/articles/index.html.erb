@@ -2,13 +2,13 @@
   <%= link_to "新規投稿", new_article_path ,class: :font %><br />
 </div>
 
-<% @articles.each do |article| %>
-  <div class="article-wrapper">
-    <%# <%= link_to image_tag(article.image), articles_path(article.id) %>
-    <%= link_to article.user.nickname, article_path(article.id), class: :nickname %>
-    <%= link_to article.post, article_path(article.id), class: :post %><br />
-  </div>
-<% end %>
+
+  <% @articles.each do |article| %>
+    <%= link_to article.user.nickname, article_path(article.id), class: :font %>
+    <%= link_to article.post, article_path(article.id), class: :font %><br />
+    <%= link_to image_tag article.image.variant(resize: '500x500'), articles_path(article.id)
+  <% end %>
+</div>
 
 
   <%# メイン %>
