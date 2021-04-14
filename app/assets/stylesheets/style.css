@@ -1,3 +1,8 @@
+/* ヘッダー・サイドバー */
+.layout_page{
+  display: flex;
+} 
+
 a {
   color: #F4F5F7;
   text-decoration: none;
@@ -28,6 +33,7 @@ a {
   flex: 0 0 240px;
   background-color: #3ad6b2;
   height: 100vh;
+  box-sizing: border-box;
 }
 
 .sidebar .box {
@@ -39,45 +45,39 @@ a {
 }
 
 .area_register_sidebar a {
+  font-size: 22px;
   display: flex;
   align-items: center;
   height: 50px;
-  padding: 0 0 0 60px;
-  position: relative;
+  padding: 0 0 0 30px;
 }
-
-.area_register_sidebar a:before {
-  content:"";
-  display: block;
-  width: 30px;
-  height: 30px;
-  background-color: #F4F5F7;
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-}
-
 
 .list_nav_sidebar a {
+  font-size: 22px;
   display: flex;
   align-items: center;
   height: 50px;
-  padding: 0 0 0 60px;
-  position: relative;
+  padding: 0 0 0 30px;
 }
 
-.list_nav_sidebar a:before {
-  content:"";
+/* 投稿一覧画面 */
+.font {
   display: block;
-  width: 30px;
-  height: 30px;
-  background-color: #F4F5F7;
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
+  color: cornflowerblue;
 }
+
+.article-wrapper {
+  display: block;
+  text-align: center;
+}
+
+.nikcname {
+
+}
+
+
+
+
 
 .main {
   background-color: rgb(242, 248, 236);
@@ -104,7 +104,7 @@ a {
 }
 
 /* サムネイル */
-.list_post .thumb {
+/* .list_post .thumb {
   width: 100%;
   background-color: crimson;
 }
@@ -115,17 +115,17 @@ a {
   width: 100%;
   padding-top: 75%;
   background-color: crimson;
-}
+} */
 
 /* レイアウト */
-.list_post .layout {
+/* .list_post .layout {
   display: flex;
   margin-top: 10px 0 0;
-}
+} */
 
 /* アイキャッチ */
-.list_post .eye_catch {
-  flex: 0 0 40px;
+/* .list_post .eye_catch { */
+  /* flex: 0 0 40px;
   margin: 0 10px 0 0;
 }
 
@@ -133,15 +133,15 @@ a {
   width: 100%;
   background-color: rgb(29, 29, 80);
   border-radius: 50%;
-}
+} */
 
-.list_post .image:before {
+/* .list_post .image:before {
   content: "";
   display: block;
   width: 100%;
   padding-top: 100%;
   background-color: #ccc;
-}
+} */
 
 /* テキスト */
 .list_post .text {
@@ -150,12 +150,4 @@ a {
 }
 
 
-.layout_page{
-  display: flex;
-}
 
-
-/* 投稿機能 */
-.font {
-  color: cornflowerblue;
-}

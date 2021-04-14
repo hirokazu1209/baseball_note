@@ -1,0 +1,13 @@
+/* トップページ */
+.top-wrapper {
+  display: inline-block;
+  width: 100vw;
+  
+}
+
+.top-page {
+  text-align: center;
+  background-image: url(top.jpeg);
+  background-size:  cover;
+  height: 100vh;
+}
