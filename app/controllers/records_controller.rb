@@ -1,6 +1,8 @@
 class RecordsController < ApplicationController
   # before_action :task_string, only: [:create]
   def index
+    @record = Record.new
+    @record = current_user.records
   end
 
   def new
