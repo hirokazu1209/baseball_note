@@ -2,16 +2,15 @@
 
 ## users テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| name     | string | null: false |
-| nickname | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
-| pitching | string | null: false |
-| batting  | string | null: false |
-| position | string | null: false |
-| profile  | string | null: false |
+| Column            | Type   | Options     |
+| ----------------- | ------ | ----------- |
+| name              | string | null: false |
+| nickname          | string | null: false |
+| email             | string | null: false |
+| password          | string | null: false |
+| pitching_batting  | string | null: false |
+| position          | string | null: false |
+| profile           | string | null: false |
 
 ### Association
 
