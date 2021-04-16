@@ -67,8 +67,7 @@ ActiveRecord::Schema.define(version: 2021_04_12_022927) do
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "pitching", default: "", null: false
-    t.string "batting", default: "", null: false
+    t.string "pitching_batting", default: "", null: false
     t.string "position", default: "", null: false
     t.string "profile", default: ""
     t.string "reset_password_token"

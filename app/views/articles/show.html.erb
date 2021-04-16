@@ -1,31 +1,53 @@
-<div class="font">
-  <%= link_to @article.post, "#", class: :font %>
-
-  <% if user_signed_in? && current_user.id == @article.user_id %>
-
-  <%= link_to "編集する", edit_article_path(@article), class: :font %>
-  <%= link_to "削除する", article_path(@article), method: :delete, class: :font %>
-
-  <% end %>
-  <div class="prototype__comments">
-    <% if user_signed_in? %>
-      <%= form_with model:[@article, @comment], local: true do |f|%>
-        <div class="field">
-          <%= f.label :comment, "コメント" %><br />
-          <%= f.text_field :comment %>
-        </div>
-        <div class="actions">
-          <%= f.submit "コメントする"  %>
+<main class="main">
+  <div class="inner">
+    <div class="article__wrapper">
+      <p class="article__hedding">
+        <%= "#{@article.user.nickname}さんの投稿" %>
+      </p>
+      <%= link_to @article.post, root_path, class: :prototype__user %>
+      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+      <% if user_signed_in? && current_user.id == @article.user_id %>
+        <div class="article__manage">
+          <%= link_to "編集する", edit_article_path(@article.id), class: :article__btn %>
+          <%= link_to "削除する", article_path(@article.id), method: :delete, class: :article__btn %>
         </div>
       <% end %>
-    <% end %> 
-    <ul class="comments_lists">
-      <% @comments.each do |comment| %>
-        <li class="comments_list">
-            <%= comment.comment %>
-            <%= link_to comment.user.nickname, user_path(comment.user),class: :font %>
-        </li>
-      <% end %>   
-    </ul>
+      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <div class="article__image">
+        <%= image_tag @article.image %>
+      </div>
+      <div class="article__body">
+        <div class="article__detail">
+          <p class="article__title"></p>
+          <p class="article__message">
+            <%= @article.post %>
+          </p>
+        </div>
+      <div class="prototype__comments">
+        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+          <% if user_signed_in? %>
+            <%= form_with model:[@article, @comment], local: true do |f|%>
+              <div class="field">
+                <%= f.label :comment, "コメント" %><br />
+                <%= f.text_field :comment, id:"comment_post" %>
+              </div>
+              <div class="actions">
+                <%= f.submit "送信する", class: :form__btn  %>
+              </div>
+            <% end %>
+          <% end %> 
+        <%# // ログインしているユーザーには上記を表示する %>
+        <ul class="comments_lists">
+          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+            <% @comments.each do |comment| %>
+              <li class="comments_list">
+                  <%= comment.comment %>
+                  <%= link_to comment.user.nickname, user_path(comment.user), class: :comment_user %>
+              </li>
+            <% end %>   
+          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+        </ul>
+      </div>
+    </div>
   </div>
-</div>
+</main>

@@ -1,9 +1,15 @@
-<%= form_with model: @article, local: true do |f|%>
-  <%= f.label :post, "投稿内容" %><br />
-  <%= f.text_field :post, id:"#" %><br />
+<div class="account-page">
+  <div class="account-page__inner">
 
-  <%= f.label :image, "ファイルをアップロード" %><br />
-  <%= f.file_field :image, id:"#" %><br />
+    <%= form_with model: @article, local: true do |f|%>
 
-  <%= f.submit "投稿する" %>
-<% end %>
+      <%= f.label :post, "投稿内容", class: :font %><br />
+      <%= f.text_field :post, class: :font_area %><br />
+
+      <%= f.label :image, "ファイルをアップロード", class: :font %> <br />
+      <%= f.file_field :image %><br />
+
+      <%= f.submit "投稿する" ,class: :article_btn%>
+    <% end %>
+  </div>
+</div>

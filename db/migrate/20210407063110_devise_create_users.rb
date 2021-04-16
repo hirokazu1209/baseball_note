@@ -8,8 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :nickname,           null: false, default: ""
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.string :pitching,           null: false, default: ""
-      t.string :batting,            null: false, default: ""
+      t.string :pitching_batting,   null: false, default: ""
       t.string :position,           null: false, default: ""
       t.string :profile,            default: ""
 

@@ -8,9 +8,8 @@ class User < ApplicationRecord
   has_many :articles
   has_many :comments
 
-  validates :name     , presence: true
-  validates :nickname , presence: true
-  validates :pitching , presence: true
-  validates :batting  , presence: true
-  validates :position , presence: true
+  validates :name              , presence: true
+  validates :nickname          , presence: true
+  validates :pitching_batting  , presence: true
+  validates :position          , presence: true
 end
