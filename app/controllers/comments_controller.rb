@@ -4,9 +4,9 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to articles_path(@comment.article)
     else
-      @article = @comment.prototype
+      @article = @comment.article
       @comments = @article.comments
-      render "prototypes/show"
+      render "articles/show"
     end
   end
 

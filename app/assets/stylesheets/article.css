@@ -1,12 +1,24 @@
-/* 新規登録画面・ログイン画面 */
+.font {
+  color: #29c4a0;
+  font-size: 20px;
+  
+}
+
 h2 {
   color: #29c4a0;
-
+  padding: 0 0 0 20px;
 }
 
 .account-page {
   background-color: rgb(242, 248, 236);
-  flex: 700px;
+  flex: auto;
+  min-width: 10px;
+  padding: 0 0 0 70px;
+}
+
+.account-page .account-page__inner {
+  background-color: rgb(242, 248, 236);
+  flex: auto;
   min-width: 10px;
   padding: 0 0 0 70px;
 }
@@ -20,9 +32,9 @@ h2 {
   margin-bottom: 15px;
   color: #29c4a0;
   font-size: 20px;
-  width: 700px;
+  width: 100%;
   height: 40px;
-  border: none;
+  border: none;  
 }
 
 .account-page input[type=password] {
@@ -30,7 +42,7 @@ h2 {
   margin-bottom: 15px;
   color: #29c4a0;
   font-size: 20px;
-  width: 700px;
+  width: 100%;
   height: 40px;
   border: none;
 }
@@ -40,50 +52,19 @@ h2 {
   margin-bottom: 15px;
   color: #29c4a0;
   font-size: 20px;
-  width: 700px;
+  width: 100%;
   height: 80px;
   border: none;
 }
 
 .account-page input[type=submit] {
+  margin-top: 30px;
   margin-bottom: 15px;
   text-align: center;
   color: #29c4a0;
   font-size: 20px;
-  width: 30%;
+  width: 15%;
   height: 40px;
   border: none;
   cursor:  pointer;
-}
-
-/* ユーザー詳細ページ */
-.user__wrapper{
-  min-height: calc(100vh - 161px);
-}
-.table{
-  border-collapse: collapse;
-  margin-bottom: 32px;
-  width: 50%;
-}
-.table__col1{
-  text-align: left;
-  font-weight: bold;
-  background: #fafafa;
-  border-collapse: collapse;
-  border: 1px solid #3ad6b2;
-  width: 30%;
-  padding: 8px;
-}
-.table__col2{
-  text-align: left;
-  border: 1px solid #3ad6b2;
-  border-collapse: collapse;
-  width: 70%;
-  padding: 16px 8px;
-}
-.user__card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
 }

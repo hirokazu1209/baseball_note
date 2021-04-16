@@ -11,7 +11,6 @@ a {
 
 .header {
   background-color: #29c4a0;
-  
 }
 
 .container{
@@ -23,9 +22,12 @@ a {
 
 .logo_header .logo {
   display: block;
-  width: 80px;
+  text-align: center;
+  width: 200px;
   height: 30px;
-  background-color: #29c4a0;
+  font-size: 20px;
+  color: #3ad6b2;
+  background-color: #F4F5F7;
 }
 
 
@@ -49,7 +51,7 @@ a {
   display: flex;
   align-items: center;
   height: 50px;
-  padding: 0 0 0 30px;
+  padding: 0 0 0 10px;
 }
 
 .list_nav_sidebar a {
@@ -57,27 +59,8 @@ a {
   display: flex;
   align-items: center;
   height: 50px;
-  padding: 0 0 0 30px;
+  padding: 0 0 0 10px;
 }
-
-/* 投稿一覧画面 */
-.font {
-  display: block;
-  color: cornflowerblue;
-}
-
-.article-wrapper {
-  display: block;
-  text-align: center;
-}
-
-.nikcname {
-
-}
-
-
-
-
 
 .main {
   background-color: rgb(242, 248, 236);
@@ -97,11 +80,11 @@ a {
   margin: -8px;
 }
 
-.list_post > li {
+/* .list_post > li {
   padding: 8px;
   /* background-color: #ccc; */
-  width: 25%;
-}
+  /* width: 25%; */
+/* } */
 
 /* サムネイル */
 /* .list_post .thumb {

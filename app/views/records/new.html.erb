@@ -8,26 +8,26 @@
           <%= f.label :practice_time, "練習時間" %><br />
         </div>
         <div class="field-input">
-          <%= f.text_field :practice_time, id:"#" %><br />
+          <%= f.text_field :practice_time, placeholder: "例：20", id:"#" %><br />
         </div>
         <div class="field-label">
           <%= f.label :ball, "球数" %><br />
         </div>
         <div class="field-input">
-          <%= f.text_field :ball, id:"#" %><br />
+          <%= f.text_field :ball, placeholder: "例：100", id:"#" %><br />
         </div>
         <div class="field-label">
           <%= f.label :check, "課題" %><br />
-          <% ["ヘッドが下がる","頭が突っ込む","手首がこねる","軸足に体重が乗らない"].each do |task| %>
+          <% ["ヘッドが下がる","頭が突っ込む","手首がこねる","軸足に体重が乗らない","詰まる"].each do |task| %>
             <%= f.check_box :check, {multiple: true}, task, nil %>
-            <%= task %><br />
+            <%= task %>
           <% end %>
-        </div>
+        </div><br />
         <div class="field-label">
           <%= f.label :content, "詳細" %><br />
         </div>
         <div class="field-input">
-          <%= f.text_area :content, id:"#" %><br />
+          <%= f.text_area :content, placeholder: "ご自由にご記入下さい", id:"#" %><br />
         </div>
         <div class="actions">
           <%= f.submit "記録" %>

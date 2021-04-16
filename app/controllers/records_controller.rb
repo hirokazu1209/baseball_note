@@ -1,8 +1,7 @@
 class RecordsController < ApplicationController
   # before_action :task_string, only: [:create]
   def index
-    @record = Record.new
-    @record = current_user.records
+    @record = Record.all
   end
 
   def new
@@ -24,7 +23,4 @@ class RecordsController < ApplicationController
     params.require(:record).permit(:practice_time, :ball, :content, check:[]).merge(user_id: current_user.id)
   end
 
-  # def task_string
-  #   params[:record][:check] = params[:record][:check].join("/")
-  # end
 end

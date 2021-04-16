@@ -43,13 +43,9 @@
           <%= f.password_field :password_confirmation, placeholder: "半角英数字6桁以上のパスワードを入力して下さい", autocomplete: "off" %>
         </div>
 
-        <div class="field-label">
-          <%= f.label :pitching %><br />
-          <%= f.text_field :pitching , placeholder: "例：右投げ" %>
-        </div>
         <div class="field-input">
-          <%= f.label :batting %><br />
-          <%= f.text_field :batting , placeholder: "例：右打ち" %>
+          <%= f.label :pitching_batting %><br />
+          <%= f.text_field :pitching_batting , placeholder: "例：右投右打" %>
         </div>
 
         <div class="field-label">

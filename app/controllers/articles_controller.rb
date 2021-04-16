@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @articles = Article.all
@@ -46,6 +47,10 @@ class ArticlesController < ApplicationController
   end
 
   private
+  def set_item
+    @article = Article.find(params[:id])
+  end
+
   def article_params
     params.require(:article).permit(:post, :image).merge(user_id: current_user.id)
   end

@@ -6,9 +6,11 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
     <script src="https://kit.fontawesome.com/fontawesome.js" crossorigin="anonymous"></script>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   </head>
 
   <body>
@@ -16,7 +18,7 @@
     <header class="header">
       <div class="container">
         <div class="logo_header">
-          <%= link_to "logo", root_path ,class:"logo"%>
+          <%= link_to "べ〜すぼ〜るノート", root_path ,class:"logo"%>
         </div>
       </div>
     </header>
@@ -28,7 +30,7 @@
         <div class="box">
           <% if user_signed_in? %>
             <ul class="area_register_sidebar">
-              <%= link_to current_user.nickname, '#' %>
+              <%= link_to "#{current_user.nickname}さん", user_path(current_user) %>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fas fa-sign-out-alt"></i>ログアウト
               <% end %>
@@ -36,10 +38,10 @@
           <% else%>
             <ul class="area_register_sidebar">
               <%= link_to new_user_registration_path ,method: :get do %>
-                <i class="fas fa-edit"></i> 新規登録
+                <i class="fas fa-edit fa-fw"></i> 新規登録
               <% end %>
               <%= link_to new_user_session_path ,method: :get do %>
-                <i class="fas fa-sign-in-alt"></i> ログイン
+                <i class="fas fa-sign-in-alt fa-fw"></i> ログイン
               <% end %>
             </ul>
           <% end %>
@@ -47,14 +49,14 @@
         <%# サイドバー 記録・検索・投稿ボタン %>
         <div class="box">
           <ul class="list_nav_sidebar">
-            <%= link_to new_record_path, method: :get do %>
-              <i class="fas fa-sticky-note"></i> 記録
+            <%= link_to records_path, method: :get do %>
+              <i class="fas fa-sticky-note fa-fw"></i> 記録する
             <% end %>
             <%= link_to articles_path, method: :get do %>
-              <i class="fas fa-compass"></i> 検索
+              <i class="fas fa-compass fa-fw"></i> 検索する
             <% end %>
             <%= link_to articles_path, method: :get do %>
-              <i class="fas fa-newspaper"></i> 投稿
+              <i class="fas fa-newspaper fa-fw"></i> 投稿する
             <% end %>
           </ul>
         </div>
