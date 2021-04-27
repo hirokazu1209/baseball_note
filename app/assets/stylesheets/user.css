@@ -1,6 +1,7 @@
 /* 新規登録画面・ログイン画面 */
 h2 {
   color: #29c4a0;
+  margin-top: 20px;
 
 }
 
@@ -35,6 +36,16 @@ h2 {
   border: none;
 }
 
+.account-page input[type=email] {
+  padding: 0 0 0 30px;
+  margin-bottom: 15px;
+  color: #29c4a0;
+  font-size: 20px;
+  width: 700px;
+  height: 40px;
+  border: none;
+}
+
 .account-page textarea {
   padding: 0 0 0 30px;
   margin-bottom: 15px;
@@ -57,33 +68,26 @@ h2 {
 }
 
 /* ユーザー詳細ページ */
-.user__wrapper{
-  min-height: calc(100vh - 161px);
-}
 .table{
   border-collapse: collapse;
   margin-bottom: 32px;
   width: 50%;
 }
 .table__col1{
+  color: #F4F5F7;
   text-align: left;
   font-weight: bold;
-  background: #fafafa;
+  background: #3ad6b2;
   border-collapse: collapse;
-  border: 1px solid #3ad6b2;
+  border: 1px solid #F4F5F7;
   width: 30%;
   padding: 8px;
 }
 .table__col2{
   text-align: left;
-  border: 1px solid #3ad6b2;
+  border: 1px solid #3ad6b2 ;
+  background: #fafafa;
   border-collapse: collapse;
   width: 70%;
   padding: 16px 8px;
-}
-.user__card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
 }

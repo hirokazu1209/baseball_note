@@ -1,14 +1,16 @@
-.font {
-  color: #29c4a0;
-  font-size: 20px;
-  
+/* 記事一覧ページ */
+.main-article {
+  background-color: rgb(242, 248, 236);
+  flex: auto;
+  flex-wrap: wrap;
+  min-width: 10px;
+  width: 33%;
 }
 
-h2 {
-  color: #29c4a0;
-  padding: 0 0 0 20px;
-}
 
+
+
+/* 新規投稿ページ */
 .account-page {
   background-color: rgb(242, 248, 236);
   flex: auto;

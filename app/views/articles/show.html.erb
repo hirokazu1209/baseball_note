@@ -8,8 +8,8 @@
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
       <% if user_signed_in? && current_user.id == @article.user_id %>
         <div class="article__manage">
-          <%= link_to "編集する", edit_article_path(@article.id), class: :article__btn %>
-          <%= link_to "削除する", article_path(@article.id), method: :delete, class: :article__btn %>
+          <%= link_to "編集する", edit_article_path(@article.id), class: :font %>
+          <%= link_to "削除する", article_path(@article.id), method: :delete, class: :font %>
         </div>
       <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>

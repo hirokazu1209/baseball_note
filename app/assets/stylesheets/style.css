@@ -1,4 +1,11 @@
 /* ヘッダー・サイドバー */
+body {
+  margin: 0;
+  padding: 0;
+  background: url(bg_body.gif) repeat; /* 背景画像(白の1x1) */
+  background-attachment: fixed;
+}
+
 .layout_page{
   display: flex;
 } 
@@ -8,9 +15,39 @@ a {
   text-decoration: none;
 }
 
+a.comment_user {
+  color: #29c4a0;
+  padding: 10px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  width: 100px;
+  cursor:  pointer;
+}
+
+a.font {
+  color: #F4F5F7;
+  background-color: #29c4a0;
+  border: 3px , solid,#29c4a0 ;
+  padding: 10px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  width: 100px;
+  cursor:  pointer;
+}
 
 .header {
+  z-index: 2;
   background-color: #29c4a0;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
 }
 
 .container{
@@ -32,7 +69,11 @@ a {
 
 
 .sidebar {
-  flex: 0 0 240px;
+  z-index: 1;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 60px;
+  width: 240px;
   background-color: #3ad6b2;
   height: 100vh;
   box-sizing: border-box;
@@ -63,74 +104,8 @@ a {
 }
 
 .main {
+  width: 100%;
+  z-index: 1;
   background-color: rgb(242, 248, 236);
-  flex: auto;
-  min-width: 10px;
-  padding: 24px;
-}
-
-.main .box {
-  padding: 30px 0;
-}
-
-/* 投函リスト */
-.list_post {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -8px;
-}
-
-/* .list_post > li {
-  padding: 8px;
-  /* background-color: #ccc; */
-  /* width: 25%; */
-/* } */
-
-/* サムネイル */
-/* .list_post .thumb {
-  width: 100%;
-  background-color: crimson;
-}
-
-.list_post .thumb:before {
-  content: "";
-  display: block;
-  width: 100%;
-  padding-top: 75%;
-  background-color: crimson;
-} */
-
-/* レイアウト */
-/* .list_post .layout {
-  display: flex;
-  margin-top: 10px 0 0;
-} */
-
-/* アイキャッチ */
-/* .list_post .eye_catch { */
-  /* flex: 0 0 40px;
-  margin: 0 10px 0 0;
-}
-
-.list_post .image {
-  width: 100%;
-  background-color: rgb(29, 29, 80);
-  border-radius: 50%;
-} */
-
-/* .list_post .image:before {
-  content: "";
-  display: block;
-  width: 100%;
-  padding-top: 100%;
-  background-color: #ccc;
-} */
-
-/* テキスト */
-.list_post .text {
-  flex: auto;
   min-width: 10px;
 }
-
-
-
