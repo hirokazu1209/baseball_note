@@ -1,44 +1,54 @@
-<div class="record_bar">
-  <canvas id="myBarChart" width="1000" height="500"></canvas>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-  <script>
-    var ctx = document.getElementById("myBarChart");
-    var myBarChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['4月1日', '4月2日', '4月3日', '4月4日', '4月5日', '4月6日', '4月7日'],
-        datasets: [
-          {
-            label: '練習時間',
-            data: [30, 60, 45, 80, 10, 0, 50],
-            backgroundColor: "rgb(175,238,238)"
-          }
-        ]
-      },
-      options: {
-        title: {
-          display: true,
-          text: '練習時間'
-        },
-        scales: {
-          yAxes: [{
-            ticks: {
-              suggestedMax: 120,
-              suggestedMin: 0,
-              stepSize: 60,
-              callback: function(value, index, values){
-                return  value +  '分'
+<div class="main-record">
+  <div class="record-post">
+    <h2><%= link_to "新規で記録する", new_record_path ,class: :font %></h2><br />
+  
+    <h2><%= "#{current_user.nickname}さんの練習記録" %></h2>
+
+    <% @practice_time.each do |practice_time| %>
+        <%= practice_time.practice_time %>
+    <% end %>
+
+    <% @ball.each do |ball| %>
+        <%= ball.ball %>
+    <% end %>
+
+    <div class="record_bar">
+      <canvas id="myBarChart" width="1000" height="500"></canvas>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+      <script>
+        <%= @practice_time %>
+        var ctx = document.getElementById("myBarChart");
+        var myBarChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['4月1日', '4月2日', '4月3日', '4月4日', '4月5日', '4月6日', '4月7日'],
+            datasets: [
+              {
+                label: '練習時間',
+                data: [practice_time],
+                backgroundColor: "rgb(175,238,238)"
               }
-            }
-          }]
-        },
-      }
-    });
-  </script>
-</div>
-<div class="record_btn">
-  <span class='purchase-btn-text'>記録する</span>
-  <%= link_to ("/record/new") do %>
-    <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-  <% end %>
+            ]
+          },
+          options: {
+            title: {
+              display: true,
+              text: '練習時間'
+            },
+            scales: {
+              yAxes: [{
+                ticks: {
+                  suggestedMax: 120,
+                  suggestedMin: 0,
+                  stepSize: 60,
+                  callback: function(value, index, values){
+                    return  value +  '分'
+                  }
+                }
+              }]
+            },
+          }
+        });
+      </script>
+    </div>    
 </div>

@@ -1,20 +1,7 @@
-.main-article {
-  background-color: rgb(242, 248, 236);
+.main-record {
+  /* background-color: rgb(242, 248, 236); */
   flex: auto;
-  flex-wrap: wrap;
   min-width: 10px;
   padding: 40px;
-  width: 33%;
-
-}
-
-.img {
-  object-fit: cover;
-  margin: 30px;
-}
-
-.record_btn {
-  color: darkgreen;
-  display: block;
 }
 

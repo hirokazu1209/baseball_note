@@ -1,7 +1,9 @@
 class RecordsController < ApplicationController
   # before_action :task_string, only: [:create]
   def index
-    @record = Record.all
+    @practice_time = Record.select("practice_time")
+    @ball = Record.select("ball")
+
   end
 
   def new
@@ -17,6 +19,10 @@ class RecordsController < ApplicationController
     end
   end
 
+  def show
+    @record = Record.find(params[:id])
+    @practice_time = @record.practice_time 
+  end
 
   private
   def record_params

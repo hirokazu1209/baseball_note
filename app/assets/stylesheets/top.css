@@ -1,16 +1,15 @@
 /* トップページ */
 .top-wrapper {
   text-align: center;
-  font-size: 25px;
+  font-size: 50px;
   color: cornsilk;
 
 }
 
 .top-page {
-
   background-image: url(top.jpeg);
   background-size:  cover;
-  width: 1424px;
+  width: 1450px;
   height: 100vh;
 
 }

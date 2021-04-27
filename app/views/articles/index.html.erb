@@ -1,9 +1,13 @@
 <div class="main-article">
   <div class="article-post">
-    <%= link_to "新規投稿", new_article_path ,class: :font %><br /></div>
-  
-    <% @articles.each do |article| %>
-      <%= link_to image_tag(article.image.variant(resize: '480x480')), article_path(article.id) %>
-    <% end %>
+    <h2><%= link_to "新規投稿", new_article_path ,class: :font %></h2><br />
+    
+
+    <h2><%= "みんなの投稿一覧" %></h2>
+    <ul class='item-lists'>
+      <% @articles.each do |article| %>
+        <%= link_to image_tag(article.image, size: '340x340'), article_path(article.id) %>
+      <% end %> 
+    </ul>
   </div>
 </div>
